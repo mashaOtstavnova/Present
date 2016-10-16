@@ -1,10 +1,11 @@
+using System;
 using Android.App;
 using Android.OS;
 using Presents.Core.ViewModels;
 
 namespace Presents.Droid.Views
 {
-    [Activity(Label = "View for FirstViewModel")]
+    [Activity]
     public class FirstView : BaseView<FirstViewModel>
     {
         protected override int LayoutResource => Resource.Layout.FirstView;
@@ -14,6 +15,10 @@ namespace Presents.Droid.Views
             base.OnCreate(bundle);
             //теперь можно взять вьюмодель в любом месте автивити
             // ViewModel.Hello = "test";
+            ViewModel.Title = "Presents";
+            Title = ViewModel.Title;
+
+
             SupportActionBar.SetDisplayHomeAsUpEnabled(false);
         }
     }
