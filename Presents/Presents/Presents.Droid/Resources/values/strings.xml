@@ -3,4 +3,5 @@
     <string name="Hello">Hello World, Click Me!</string>
     <string name="Navigation">Click to Navigate</string>
     <string name="ApplicationName">Presents.Droid</string>
+    <integer name="com_vk_sdk_AppId">5656833</integer>
 </resources>
