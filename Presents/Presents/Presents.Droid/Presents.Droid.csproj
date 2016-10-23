@@ -198,6 +198,11 @@
     <AndroidResource Include="Resources\drawable-xhdpi\logo.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\logo.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\logo.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\logo2.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\logo2.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\logo2.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\logo2.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\logo2.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Presents.Core\Presents.Core.csproj">

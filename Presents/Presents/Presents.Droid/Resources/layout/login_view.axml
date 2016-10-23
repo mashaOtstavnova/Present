@@ -14,7 +14,7 @@
             local:layout_scrollFlags="scroll|enterAlways" />
     </android.support.design.widget.AppBarLayout>
     <ImageView
-        android:src="@drawable/logo"
+        android:src="@drawable/logo2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/page_login_Logo"
@@ -28,7 +28,6 @@
         android:layout_height="wrap_content"
         android:text="Войти"
         android:gravity="center"
-       
         android:textColor="#fff"
         android:textSize="18sp"
         android:drawableLeft="@drawable/ic_launcher"
