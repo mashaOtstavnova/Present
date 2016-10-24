@@ -102,6 +102,10 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
+    <Reference Include="UniversalImageLoader, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Bindings.UniversalImageLoader.1.0.4\lib\MonoAndroid\UniversalImageLoader.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="VKontakte.Android, Version=1.6.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.VKontakte.1.0.0\lib\MonoAndroid\VKontakte.Android.dll</HintPath>
       <Private>True</Private>
@@ -137,7 +141,7 @@
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Views\BaseView.cs" />
     <Compile Include="Views\FirstView.cs" />
-    <Compile Include="Views\TestView.cs" />
+    <Compile Include="Views\HomeView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -160,6 +164,12 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\button_selector.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\nav_header.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\page_home_view.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -203,6 +213,46 @@
     <AndroidResource Include="Resources\drawable-xhdpi\logo2.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\logo2.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\logo2.png" />
+    <AndroidResource Include="Resources\menu\nav_menu.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_dashboard.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_discuss.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_done.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_event.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_forum.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_headset.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_menu.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_menu_refresh.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_dashboard.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_discuss.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_done.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_event.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_forum.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_headset.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_menu.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_menu_refresh.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_dashboard.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_discuss.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_done.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_event.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_forum.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_headset.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_menu.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_menu_refresh.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_dashboard.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_discuss.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_done.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_event.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_forum.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_headset.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_menu.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_dashboard.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_discuss.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_done.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_event.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_forum.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_headset.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_menu.png" />
+    <AndroidResource Include="Resources\drawable\splashscrean1.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Presents.Core\Presents.Core.csproj">
@@ -215,6 +265,12 @@
       <Visible>False</Visible>
       <Version>23.4.0.1</Version>
     </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="adapters\" />
+    <Folder Include="fragments\" />
+    <Folder Include="helpers\" />
+    <Folder Include="models\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.4.0.1\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.4.0.1\build\Xamarin.Android.Support.Vector.Drawable.targets')" />

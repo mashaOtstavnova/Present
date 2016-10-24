@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Presents.Core.ViewModels
 {
-    public class TestViewModel : BaseViewModel
+    public class HomeViewModel : BaseViewModel
     {
         private string _hello = "Hello MvvmCross";
         public string Hello

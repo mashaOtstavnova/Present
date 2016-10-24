@@ -41,7 +41,7 @@ namespace Presents.Core.ViewModels
 
         private void ShowMainPage()
         {
-            ShowViewModel<TestViewModel>();
+            ShowViewModel<HomeViewModel>();
             //if (_repository.Users.Any(human => human.Login == Login && human.Password == Password))
             //{
             //    var user =
