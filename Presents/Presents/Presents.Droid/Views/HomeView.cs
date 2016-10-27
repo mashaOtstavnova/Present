@@ -49,18 +49,21 @@ namespace Presents.Droid.Views
             navigationView.NavigationItemSelected += (sender, e) => {
                 e.MenuItem.SetChecked(true);
 
-                //switch (e.MenuItem.ItemId)
-                //{
-                //    case Resource.Id.nav_home:
-                //        ViewModel.ShowBrowse();
-                //        break;
-                //    case Resource.Id.nav_friends:
-                //        ViewModel.ShowFriends();
-                //        break;
-                //    case Resource.Id.nav_profile:
-                //        ViewModel.ShowProfile();
-                //        break;
-                //}
+                switch (e.MenuItem.ItemId)
+                {
+                    case Resource.Id.nav_user:
+                        ViewModel.ShowProfile();
+                        break;
+                    case Resource.Id.nav_friends:
+                        ViewModel.ShowFriends();
+                        break;
+                    case Resource.Id.nav_settings:
+                        ViewModel.ShowInfo();
+                        break;
+                    case Resource.Id.nav_info:
+                        ViewModel.ShowInfo();
+                        break;
+                }
 
 
 

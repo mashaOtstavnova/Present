@@ -141,7 +141,11 @@
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Views\BaseView.cs" />
     <Compile Include="Views\FirstView.cs" />
+    <Compile Include="Views\FriendsView.cs" />
     <Compile Include="Views\HomeView.cs" />
+    <Compile Include="Views\InfoView.cs" />
+    <Compile Include="Views\SettingsView.cs" />
+    <Compile Include="Views\UserView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -170,6 +174,18 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\page_home_view.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\friends_view.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\info_view.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\user_view.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\setting_view.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -253,6 +269,31 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_headset.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_menu.png" />
     <AndroidResource Include="Resources\drawable\splashscrean1.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_exit.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_friends.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_info.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_settings.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_user.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_exit.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_friends.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_info.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_settings.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_user.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_exit.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_friends.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_info.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_settings.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_user.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_exit.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_friends.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_info.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_settings.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_user.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_exit.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_friends.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_info.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_settings.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_user.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Presents.Core\Presents.Core.csproj">
