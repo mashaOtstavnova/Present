@@ -15,6 +15,7 @@ using Android.Views;
 using Android.Widget;
 using Com.Nostra13.Universalimageloader.Core;
 using Presents.Core.ViewModels;
+using Presents.Droid.Services;
 
 namespace Presents.Droid.Views
 {
@@ -25,7 +26,7 @@ namespace Presents.Droid.Views
         NavigationView navigationView;
         protected override int LayoutResource => Resource.Layout.page_home_view;
 
-        protected override void OnCreate(Bundle bundle)
+        protected override async void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             // ViewModel.Hello = "test";
@@ -39,8 +40,11 @@ namespace Presents.Droid.Views
           
             var photoUser = headerMenu.FindViewById<ImageView>(Resource.Id.user_image);
             var nameUser = headerMenu.FindViewById<TextView>(Resource.Id.user_name);
-            nameUser.Text = "First Name";
-            imageLoader.DisplayImage("http://lh6.ggpht.com/-Y4RkgMjWkFM/UgJ1eY2KcoI/AAAAAAACA2Q/dDvuuwV0rfQ/wI0DT5JxLZs_thumb%25255B1%25255D.jpg?imgmax=800", photoUser );
+         
+
+            var user = await GetProfileService.GetUsers();
+            nameUser.Text = user.first_name +" "+user.last_name;
+            imageLoader.DisplayImage(user.photo_max_orig, photoUser );
 
             drawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
 

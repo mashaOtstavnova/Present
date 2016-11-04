@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Android.App;
 using Android.OS;
 using Android.Runtime;
@@ -64,6 +65,7 @@ namespace Presents.Droid.Views
         private void OnSucsessResult(VKSdk.LoginState loginState)
         {
             if (_isResumed)
+                
             {
                 if (loginState == VKSdk.LoginState.LoggedOut)
                 {
@@ -87,6 +89,7 @@ namespace Presents.Droid.Views
 
             if (StoreExtensions.IsVkUserAuthorized(PackageName))
             {
+               
                 _isResumed = true;
                 if (VKSdk.IsLoggedIn)
                 {

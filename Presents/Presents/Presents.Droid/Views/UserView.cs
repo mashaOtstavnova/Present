@@ -21,6 +21,12 @@ using Android.Support.V7.App;
 
 using V7Toolbar = Android.Support.V7.Widget.Toolbar;
 using MvvmCross.Droid.Support.V7.AppCompat;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Presents.Core.Domain;
+using Presents.Droid.Services;
+using VKontakte;
+using VKontakte.API;
 
 namespace Presents.Droid.Views
 {
@@ -30,7 +36,7 @@ namespace Presents.Droid.Views
     {
         ImageLoader imageLoader;
         protected int LayoutResource => Resource.Layout.user_view;
-        protected override void OnCreate(Bundle bundle)
+        protected override async void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             SetContentView(LayoutResource);
@@ -38,11 +44,11 @@ namespace Presents.Droid.Views
             Title = ViewModel.Title;
 
             imageLoader = ImageLoader.Instance;
-
+            var user = await GetProfileService.GetUsers();
 
             //friends = Util.GenerateFriends();
-            var title = "Title";
-            var details = "Detailse";
+            var title = user.first_name + " " + user.last_name;
+            var birthday = user.bdate;
 
             title = string.IsNullOrWhiteSpace(title) ? "New Friend" : title;
             var toolbar = FindViewById<V7Toolbar>(Resource.Id.toolbar);
@@ -52,16 +58,23 @@ namespace Presents.Droid.Views
             //    image = friends[0].Image;
 
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-
             var collapsingToolbar = FindViewById<CollapsingToolbarLayout>(Resource.Id.collapsing_toolbar);
             collapsingToolbar.SetTitle(title);
+            imageLoader.DisplayImage(user.photo_max_orig, FindViewById<ImageView>(Resource.Id.friend_image));
 
-            imageLoader.DisplayImage("http://lh6.ggpht.com/-Y4RkgMjWkFM/UgJ1eY2KcoI/AAAAAAACA2Q/dDvuuwV0rfQ/wI0DT5JxLZs_thumb%25255B1%25255D.jpg?imgmax=800", FindViewById<ImageView>(Resource.Id.friend_image));
 
-
-            var detailsTextView = FindViewById<TextView>(Resource.Id.details);
-            detailsTextView.Text = details;
+            var birthdayTextView = FindViewById<TextView>(Resource.Id.birthday);
+            birthdayTextView.Text = birthday;
+            var cityTextView = FindViewById<TextView>(Resource.Id.city);
+            cityTextView.Text = user.city.title;
         }
+       
+
+        private void OnRequestComplete(VKResponse obj)
+        {
+            var r = obj.Json;
+        }
+
         private void GridOnItemClick(object sender, AdapterView.ItemClickEventArgs itemClickEventArgs)
         {
             //var intent = new Intent(this, typeof(FriendActivity));

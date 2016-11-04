@@ -1647,6 +1647,12 @@ namespace Presents.Droid
 			// aapt resource value: 0x7f05000a
 			public const int abc_text_size_title_material_toolbar = 2131034122;
 			
+			// aapt resource value: 0x7f050082
+			public const int activity_horizontal_margin = 2131034242;
+			
+			// aapt resource value: 0x7f050083
+			public const int activity_vertical_margin = 2131034243;
+			
 			// aapt resource value: 0x7f05007f
 			public const int card_margin = 2131034239;
 			
@@ -2234,11 +2240,14 @@ namespace Presents.Droid
 			// aapt resource value: 0x7f06008c
 			public const int appbar = 2131099788;
 			
-			// aapt resource value: 0x7f06009f
-			public const int attachmentLinkLayout = 2131099807;
+			// aapt resource value: 0x7f0600a0
+			public const int attachmentLinkLayout = 2131099808;
 			
 			// aapt resource value: 0x7f06001d
 			public const int beginning = 2131099677;
+			
+			// aapt resource value: 0x7f06008f
+			public const int birthday = 2131099791;
 			
 			// aapt resource value: 0x7f06002c
 			public const int bottom = 2131099692;
@@ -2249,11 +2258,11 @@ namespace Presents.Droid
 			// aapt resource value: 0x7f06007d
 			public const int cancel_action = 2131099773;
 			
-			// aapt resource value: 0x7f060094
-			public const int captchaAnswer = 2131099796;
+			// aapt resource value: 0x7f060095
+			public const int captchaAnswer = 2131099797;
 			
-			// aapt resource value: 0x7f060091
-			public const int captcha_container = 2131099793;
+			// aapt resource value: 0x7f060092
+			public const int captcha_container = 2131099794;
 			
 			// aapt resource value: 0x7f06002d
 			public const int center = 2131099693;
@@ -2269,6 +2278,9 @@ namespace Presents.Droid
 			
 			// aapt resource value: 0x7f060083
 			public const int chronometer = 2131099779;
+			
+			// aapt resource value: 0x7f060090
+			public const int city = 2131099792;
 			
 			// aapt resource value: 0x7f060035
 			public const int clip_horizontal = 2131099701;
@@ -2288,8 +2300,8 @@ namespace Presents.Droid
 			// aapt resource value: 0x7f060076
 			public const int content_frame = 2131099766;
 			
-			// aapt resource value: 0x7f060096
-			public const int copyUrl = 2131099798;
+			// aapt resource value: 0x7f060097
+			public const int copyUrl = 2131099799;
 			
 			// aapt resource value: 0x7f060052
 			public const int custom = 2131099730;
@@ -2317,9 +2329,6 @@ namespace Presents.Droid
 			
 			// aapt resource value: 0x7f060070
 			public const int design_navigation_view = 2131099760;
-			
-			// aapt resource value: 0x7f06008f
-			public const int details = 2131099791;
 			
 			// aapt resource value: 0x7f060010
 			public const int disableHome = 2131099664;
@@ -2381,14 +2390,14 @@ namespace Presents.Droid
 			// aapt resource value: 0x7f060041
 			public const int image = 2131099713;
 			
-			// aapt resource value: 0x7f060093
-			public const int imageView = 2131099795;
+			// aapt resource value: 0x7f060094
+			public const int imageView = 2131099796;
+			
+			// aapt resource value: 0x7f06009f
+			public const int imagesContainer = 2131099807;
 			
 			// aapt resource value: 0x7f06009e
-			public const int imagesContainer = 2131099806;
-			
-			// aapt resource value: 0x7f06009d
-			public const int imagesScrollView = 2131099805;
+			public const int imagesScrollView = 2131099806;
 			
 			// aapt resource value: 0x7f060087
 			public const int info = 2131099783;
@@ -2405,11 +2414,11 @@ namespace Presents.Droid
 			// aapt resource value: 0x7f060085
 			public const int line3 = 2131099781;
 			
-			// aapt resource value: 0x7f0600a1
-			public const int linkHost = 2131099809;
+			// aapt resource value: 0x7f0600a2
+			public const int linkHost = 2131099810;
 			
-			// aapt resource value: 0x7f0600a0
-			public const int linkTitle = 2131099808;
+			// aapt resource value: 0x7f0600a1
+			public const int linkTitle = 2131099809;
 			
 			// aapt resource value: 0x7f06000d
 			public const int listMode = 2131099661;
@@ -2432,23 +2441,23 @@ namespace Presents.Droid
 			// aapt resource value: 0x7f060018
 			public const int multiply = 2131099672;
 			
-			// aapt resource value: 0x7f0600a7
-			public const int nav_exit = 2131099815;
+			// aapt resource value: 0x7f0600a8
+			public const int nav_exit = 2131099816;
 			
-			// aapt resource value: 0x7f0600a4
-			public const int nav_friends = 2131099812;
+			// aapt resource value: 0x7f0600a5
+			public const int nav_friends = 2131099813;
 			
 			// aapt resource value: 0x7f060079
 			public const int nav_header = 2131099769;
 			
+			// aapt resource value: 0x7f0600a7
+			public const int nav_info = 2131099815;
+			
 			// aapt resource value: 0x7f0600a6
-			public const int nav_info = 2131099814;
+			public const int nav_settings = 2131099814;
 			
-			// aapt resource value: 0x7f0600a5
-			public const int nav_settings = 2131099813;
-			
-			// aapt resource value: 0x7f0600a3
-			public const int nav_user = 2131099811;
+			// aapt resource value: 0x7f0600a4
+			public const int nav_user = 2131099812;
 			
 			// aapt resource value: 0x7f06008a
 			public const int nav_view = 2131099786;
@@ -2480,17 +2489,17 @@ namespace Presents.Droid
 			// aapt resource value: 0x7f06002b
 			public const int pin = 2131099691;
 			
-			// aapt resource value: 0x7f06009b
-			public const int postContentLayout = 2131099803;
+			// aapt resource value: 0x7f06009c
+			public const int postContentLayout = 2131099804;
 			
-			// aapt resource value: 0x7f0600a2
-			public const int postSettingsLayout = 2131099810;
+			// aapt resource value: 0x7f0600a3
+			public const int postSettingsLayout = 2131099811;
 			
-			// aapt resource value: 0x7f060095
-			public const int progress = 2131099797;
+			// aapt resource value: 0x7f060096
+			public const int progress = 2131099798;
 			
-			// aapt resource value: 0x7f060092
-			public const int progressBar = 2131099794;
+			// aapt resource value: 0x7f060093
+			public const int progressBar = 2131099795;
 			
 			// aapt resource value: 0x7f060006
 			public const int progress_circular = 2131099654;
@@ -2555,17 +2564,17 @@ namespace Presents.Droid
 			// aapt resource value: 0x7f06006a
 			public const int select_dialog_listview = 2131099754;
 			
-			// aapt resource value: 0x7f06009a
-			public const int sendButton = 2131099802;
-			
-			// aapt resource value: 0x7f060098
-			public const int sendButtonLayout = 2131099800;
+			// aapt resource value: 0x7f06009b
+			public const int sendButton = 2131099803;
 			
 			// aapt resource value: 0x7f060099
-			public const int sendProgress = 2131099801;
+			public const int sendButtonLayout = 2131099801;
 			
-			// aapt resource value: 0x7f06009c
-			public const int shareText = 2131099804;
+			// aapt resource value: 0x7f06009a
+			public const int sendProgress = 2131099802;
+			
+			// aapt resource value: 0x7f06009d
+			public const int shareText = 2131099805;
 			
 			// aapt resource value: 0x7f060055
 			public const int shortcut = 2131099733;
@@ -2642,8 +2651,8 @@ namespace Presents.Droid
 			// aapt resource value: 0x7f060034
 			public const int top = 2131099700;
 			
-			// aapt resource value: 0x7f060097
-			public const int topBarLayout = 2131099799;
+			// aapt resource value: 0x7f060098
+			public const int topBarLayout = 2131099800;
 			
 			// aapt resource value: 0x7f060049
 			public const int topPanel = 2131099721;
@@ -2666,8 +2675,8 @@ namespace Presents.Droid
 			// aapt resource value: 0x7f06000a
 			public const int view_offset_helper = 2131099658;
 			
-			// aapt resource value: 0x7f060090
-			public const int vk_api_container = 2131099792;
+			// aapt resource value: 0x7f060091
+			public const int vk_api_container = 2131099793;
 			
 			// aapt resource value: 0x7f060024
 			public const int withText = 2131099684;
@@ -3026,9 +3035,6 @@ namespace Presents.Droid
 			
 			// aapt resource value: 0x7f090016
 			public const int character_counter_pattern = 2131296278;
-			
-			// aapt resource value: 0x7f090021
-			public const int monkey_ipsum = 2131296289;
 			
 			// aapt resource value: 0x7f090013
 			public const int status_bar_notification_info_overflow = 2131296275;
@@ -3511,6 +3517,9 @@ namespace Presents.Droid
 			// aapt resource value: 0x7f080143
 			public const int Base_Widget_Design_TabLayout = 2131231043;
 			
+			// aapt resource value: 0x7f080161
+			public const int Button = 2131231073;
+			
 			// aapt resource value: 0x7f080000
 			public const int CardView = 2131230720;
 			
@@ -3519,6 +3528,15 @@ namespace Presents.Droid
 			
 			// aapt resource value: 0x7f080002
 			public const int CardView_Light = 2131230722;
+			
+			// aapt resource value: 0x7f080162
+			public const int CollapsedAppBar = 2131231074;
+			
+			// aapt resource value: 0x7f080164
+			public const int Container = 2131231076;
+			
+			// aapt resource value: 0x7f080163
+			public const int ExpandedAppBar = 2131231075;
 			
 			// aapt resource value: 0x7f08015d
 			public const int MyTheme = 2131231069;
