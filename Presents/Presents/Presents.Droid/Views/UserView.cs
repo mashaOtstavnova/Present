@@ -1,50 +1,38 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.App;
-using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Support.Design.Widget;
+using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
 using Com.Nostra13.Universalimageloader.Core;
+using MvvmCross.Platform;
+using Presents.Core.IServices;
 using Presents.Core.ViewModels;
-
-
-using Android.Support.Design.Widget;
-using Android.Support.V4.App;
-using Android.Support.V7.App;
-
-
-using V7Toolbar = Android.Support.V7.Widget.Toolbar;
-using MvvmCross.Droid.Support.V7.AppCompat;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using Presents.Core.Domain;
-using Presents.Droid.Services;
-using VKontakte;
 using VKontakte.API;
+using V7Toolbar = Android.Support.V7.Widget.Toolbar;
 
 namespace Presents.Droid.Views
 {
-    [Activity(Label = "Friend", ParentActivity = typeof(HomeView))]
+    [Activity(Label = "Friend", ParentActivity = typeof (HomeView))]
     [MetaData("android.support.PARENT_ACTIVITY", Value = "navdrawer.activities.HomeView")]
-    public class UserView : MvxAppCompatActivity<UserViewModel>
+    public class UserView : BaseView<UserViewModel>
     {
-        ImageLoader imageLoader;
-        protected int LayoutResource => Resource.Layout.user_view;
+        private ImageLoader _imageLoader;
+        protected override int LayoutResource => Resource.Layout.user_view;
+
         protected override async void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            SetContentView(LayoutResource);
+            // SetContentView(LayoutResource);
             ViewModel.Title = "UserView";
             Title = ViewModel.Title;
 
-            imageLoader = ImageLoader.Instance;
-            var user = await GetProfileService.GetUsers();
+            _imageLoader = ImageLoader.Instance;
+
+            IGetProfileService profileService;
+            var service = Mvx.TryResolve(out profileService);
+
+            var user = await profileService.GetUsers();
 
             //friends = Util.GenerateFriends();
             var title = user.first_name + " " + user.last_name;
@@ -60,7 +48,7 @@ namespace Presents.Droid.Views
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             var collapsingToolbar = FindViewById<CollapsingToolbarLayout>(Resource.Id.collapsing_toolbar);
             collapsingToolbar.SetTitle(title);
-            imageLoader.DisplayImage(user.photo_max_orig, FindViewById<ImageView>(Resource.Id.friend_image));
+            _imageLoader.DisplayImage(user.photo_max_orig, FindViewById<ImageView>(Resource.Id.friend_image));
 
 
             var birthdayTextView = FindViewById<TextView>(Resource.Id.birthday);
@@ -68,7 +56,6 @@ namespace Presents.Droid.Views
             var cityTextView = FindViewById<TextView>(Resource.Id.city);
             cityTextView.Text = user.city.title;
         }
-       
 
         private void OnRequestComplete(VKResponse obj)
         {

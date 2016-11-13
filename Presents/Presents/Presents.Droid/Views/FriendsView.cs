@@ -1,14 +1,10 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-
 using Android.App;
-using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
+using MvvmCross.Binding.BindingContext;
+using MvvmCross.Platform;
+using Presents.Core.IServices;
 using Presents.Core.ViewModels;
 
 namespace Presents.Droid.Views
@@ -18,11 +14,12 @@ namespace Presents.Droid.Views
     {
         protected override int LayoutResource => Resource.Layout.friends_view;
 
-        protected override void OnCreate(Bundle bundle)
+        protected override async void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             ViewModel.Title = "FriendsView";
             Title = ViewModel.Title;
+       
         }
     }
 }

@@ -1,3 +1,4 @@
+using System.IO;
 using Android.OS;
 using Android.Support.V7.Widget;
 using Android.Views;
@@ -10,11 +11,13 @@ namespace Presents.Droid.Views
     {
         //этот вроде по желанию
         protected Toolbar Toolbar { get; set; }
-
+        //нужно переопределять на каждом актвивити
+        protected abstract int LayoutResource { get; }
+     
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            this.Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);//для статус бара (для андройда начитая с 5)
+            Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds); //для статус бара (для андройда начитая с 5)
             SetContentView(LayoutResource);
             Toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             if (Toolbar != null)
@@ -24,8 +27,5 @@ namespace Presents.Droid.Views
                 SupportActionBar.SetHomeButtonEnabled(true);
             }
         }
-
-        //нужно переопределять на каждом актвивити
-        protected abstract int LayoutResource { get; }
     }
 }
