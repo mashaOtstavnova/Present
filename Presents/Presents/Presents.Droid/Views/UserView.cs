@@ -76,7 +76,7 @@ namespace Presents.Droid.Views
             switch (item.ItemId)
             {
                 case Android.Resource.Id.Home:
-
+                    
                     NavUtils.NavigateUpFromSameTask(this);
 
                     //Wrong:
