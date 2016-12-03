@@ -153,6 +153,7 @@
     <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
     <Compile Include="DebugTrace.cs" />
     <Compile Include="Extensions\StoreExtensions.cs" />
+    <Compile Include="fragments\FriendsFragment.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="PresentsApplication.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
@@ -164,9 +165,11 @@
     <Compile Include="Views\BaseView.cs" />
     <Compile Include="Views\FirstView.cs" />
     <Compile Include="Views\FriendsView.cs" />
+    <Compile Include="Views\FriendView.cs" />
     <Compile Include="Views\HomeView.cs" />
     <Compile Include="Views\InfoView.cs" />
     <Compile Include="Views\MvxSelectableListView.cs" />
+    <Compile Include="Views\PresentsView.cs" />
     <Compile Include="Views\SettingsView.cs" />
     <Compile Include="Views\UserView.cs" />
   </ItemGroup>
@@ -176,7 +179,9 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\toolbar.axml" />
-    <AndroidResource Include="Resources\layout\FirstView.axml" />
+    <AndroidResource Include="Resources\layout\FirstView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <AndroidResource Include="Resources\layout\SplashScreen.axml" />
     <AndroidResource Include="Resources\layout\login_view.axml">
       <SubType>Designer</SubType>
@@ -212,6 +217,12 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\ListItemView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\friend_view.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\presents_view.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -324,6 +335,7 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_info.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_settings.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_user.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_present.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Presents.Core\Presents.Core.csproj">
@@ -339,7 +351,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="adapters\" />
-    <Folder Include="fragments\" />
     <Folder Include="helpers\" />
     <Folder Include="models\" />
   </ItemGroup>

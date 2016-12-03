@@ -1,6 +1,12 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
 using Android.App;
+using Android.Content;
 using Android.OS;
+using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Support.V4.App;
 using Android.Views;
@@ -10,37 +16,36 @@ using MvvmCross.Platform;
 using Presents.Core.IServices;
 using Presents.Core.ViewModels;
 using VKontakte.API;
-using V7Toolbar = Android.Support.V7.Widget.Toolbar;
+using Toolbar = Android.Support.V7.Widget.Toolbar;
 
 namespace Presents.Droid.Views
 {
-    [Activity(Label = "Friend", ParentActivity = typeof (HomeView), MainLauncher = true)]
+    [Activity(Label = "Friend", ParentActivity = typeof(FriendsView))]
     [MetaData("android.support.PARENT_ACTIVITY", Value = "navdrawer.activities.HomeView")]
-    public class UserView : BaseView<UserViewModel>
+    public class FriendView : BaseView<FriendViewModel>
     {
         private ImageLoader _imageLoader;
-        protected override int LayoutResource => Resource.Layout.user_view;
-
+        protected override int LayoutResource => Resource.Layout.friend_view;
         protected override async void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             // SetContentView(LayoutResource);
-            ViewModel.Title = "UserView";
+            ViewModel.Title = "FriendView";
             Title = ViewModel.Title;
 
             _imageLoader = ImageLoader.Instance;
-
+            
             IGetProfileService profileService;
             var service = Mvx.TryResolve(out profileService);
 
-            var user = await profileService.GetUsers();
+            var user = await profileService.GetFriend(ViewModel.IdFriend);
 
             //friends = Util.GenerateFriends();
             var title = user.first_name + " " + user.last_name;
             var birthday = user.bdate;
 
             title = string.IsNullOrWhiteSpace(title) ? "New Friend" : title;
-            var toolbar = FindViewById<V7Toolbar>(Resource.Id.toolbar);
+            var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
 
             //if (string.IsNullOrWhiteSpace(image))
@@ -56,17 +61,7 @@ namespace Presents.Droid.Views
             birthdayTextView.Text = birthday;
             var cityTextView = FindViewById<TextView>(Resource.Id.city);
             cityTextView.Text = user.city.title;
-
-            var vkLoginButton = FindViewById<Button>(Resource.Id.button_present_user);
-            vkLoginButton.Click += ButtonForPresent;
         }
-
-        private void ButtonForPresent(object sender, EventArgs e)
-        {
-            ViewModel.ShowPresents.Execute();
-        }
-
-       
 
         private void OnRequestComplete(VKResponse obj)
         {
@@ -87,7 +82,7 @@ namespace Presents.Droid.Views
             switch (item.ItemId)
             {
                 case Android.Resource.Id.Home:
-                    
+
                     NavUtils.NavigateUpFromSameTask(this);
 
                     //Wrong:

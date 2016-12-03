@@ -11,5 +11,7 @@ namespace Presents.Core.IServices
     {
         Task<User> GetUsers();
         Task<Friends> GetFriends();
+        Task<Friend> GetFriend(int idFriend);
+
     }
 }

@@ -1,6 +1,8 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Java.Lang;
+using MvvmCross.Platform.Core;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Presents.Core.Domain;
@@ -39,7 +41,7 @@ namespace Presents.Droid.Services
         {
             var request = VKApi.Friends.Get(new VKParameters(new Dictionary<string, Object>
             {
-                {VKApiConst.Fields, "id,first_name,last_name,sex,bdate,city,photo_100"}
+                {VKApiConst.Fields, "id,first_name,last_name,sex,bdate,city,photo_50,photo_max_orig"}
             }));
             try
             {
@@ -55,6 +57,14 @@ namespace Presents.Droid.Services
                 var c = ex.Message;
                 return null;
             }
+        }
+
+        public async Task<Friend> GetFriend (int idFriend)
+        {
+            var listFriend = await GetFriends();
+            return listFriend.items.FirstOrDefault(t => t.id == idFriend);
+
+            throw new System.NotImplementedException();
         }
     }
 }

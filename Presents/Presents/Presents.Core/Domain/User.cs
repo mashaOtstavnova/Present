@@ -37,7 +37,8 @@ namespace Presents.Core.Domain
         public int sex { get; set; }
         public string bdate { get; set; }
         public City city { get; set; }
-        public string photo_100 { get; set; }
+        public string photo_50 { get; set; }
+        public string photo_max_orig { get; set; }
         public int online { get; set; }
         public string deactivated { get; set; }
     }

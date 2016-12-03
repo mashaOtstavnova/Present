@@ -83,22 +83,6 @@
                         android:id="@+id/city" />
                 </LinearLayout>
             </android.support.v7.widget.CardView>
-            <Button
-                android:background="@color/indigo_500"
-                android:id="@+id/button_present_user"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="Подарки"
-                android:gravity="center"
-                android:textColor="#fff"
-                android:textSize="18sp"
-                android:drawableLeft="@drawable/ic_present"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginTop="60dp"
-                android:layout_alignParentEnd="true"
-                android:paddingLeft="10dp"
-                android:drawablePadding="-50dp" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </android.support.design.widget.CoordinatorLayout>
