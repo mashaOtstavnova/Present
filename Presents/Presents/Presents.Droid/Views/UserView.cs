@@ -66,8 +66,6 @@ namespace Presents.Droid.Views
             ViewModel.ShowPresents.Execute();
         }
 
-       
-
         private void OnRequestComplete(VKResponse obj)
         {
             var r = obj.Json;
@@ -87,7 +85,7 @@ namespace Presents.Droid.Views
             switch (item.ItemId)
             {
                 case Android.Resource.Id.Home:
-                    
+
                     NavUtils.NavigateUpFromSameTask(this);
 
                     //Wrong:

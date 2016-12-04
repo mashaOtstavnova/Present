@@ -35,6 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Domain\Present.cs" />
     <Compile Include="Domain\User.cs" />
     <Compile Include="IServices\IFileService.cs" />
     <Compile Include="IServices\IGetProfileService.cs" />
@@ -46,6 +47,9 @@
     <Compile Include="ViewModels\FriendViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\InfoViewModel.cs" />
+    <Compile Include="ViewModels\PresentsAllViewModel.cs" />
+    <Compile Include="ViewModels\PresentsBrowseViewModel.cs" />
+    <Compile Include="ViewModels\PresentsRecentViewModel.cs" />
     <Compile Include="ViewModels\PresentsViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />

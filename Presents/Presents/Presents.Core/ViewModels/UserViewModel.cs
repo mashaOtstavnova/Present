@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MvvmCross.Core.ViewModels;
+﻿using MvvmCross.Core.ViewModels;
 
 namespace Presents.Core.ViewModels
 {
@@ -16,7 +11,7 @@ namespace Presents.Core.ViewModels
 
         private void ShowCommandPresents()
         {
-            ShowViewModel<PresentsViewModel>();
+            ShowViewModel<PresentsBrowseViewModel>();
         }
     }
 }

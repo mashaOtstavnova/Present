@@ -1,4 +1,3 @@
-using System.IO;
 using Android.OS;
 using Android.Support.V7.Widget;
 using Android.Views;
@@ -7,13 +6,14 @@ using MvvmCross.Droid.Support.V7.AppCompat;
 
 namespace Presents.Droid.Views
 {
-    public abstract class BaseView<TModel> : MvxAppCompatActivity<TModel> where TModel : class, IMvxViewModel
+    public abstract class BaseView<TModel> : MvxCachingFragmentCompatActivity<TModel>
+        where TModel : class, IMvxViewModel
     {
         //этот вроде по желанию
         protected Toolbar Toolbar { get; set; }
         //нужно переопределять на каждом актвивити
         protected abstract int LayoutResource { get; }
-     
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);

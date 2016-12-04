@@ -1,10 +1,12 @@
 using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Windows.Input;
 using Android.App;
 using Android.Views;
 using Android.Widget;
+using MvvmCross.Platform.IoC;
 
-namespace Presents.Droid
+namespace NavDrawer
 {
     // This class is never actually executed, but when Xamarin linking is enabled it does how to ensure types and properties
     // are preserved in the deployed app
@@ -59,7 +61,8 @@ namespace Presents.Droid
 
         public void Include(INotifyCollectionChanged changed)
         {
-            changed.CollectionChanged += (s, e) => { var test = $"{e.Action}{e.NewItems}{e.NewStartingIndex}{e.OldItems}{e.OldStartingIndex}"; };
+            changed.CollectionChanged +=
+                (s, e) => { var test = $"{e.Action}{e.NewItems}{e.NewStartingIndex}{e.OldItems}{e.OldStartingIndex}"; };
         }
 
         public void Include(ICommand command)
@@ -67,17 +70,14 @@ namespace Presents.Droid
             command.CanExecuteChanged += (s, e) => { if (command.CanExecute(null)) command.Execute(null); };
         }
 
-        public void Include(MvvmCross.Platform.IoC.MvxPropertyInjector injector)
+        public void Include(MvxPropertyInjector injector)
         {
-            injector = new MvvmCross.Platform.IoC.MvxPropertyInjector();
+            injector = new MvxPropertyInjector();
         }
 
-        public void Include(System.ComponentModel.INotifyPropertyChanged changed)
+        public void Include(INotifyPropertyChanged changed)
         {
-            changed.PropertyChanged += (sender, e) =>
-            {
-                var test = e.PropertyName;
-            };
+            changed.PropertyChanged += (sender, e) => { var test = e.PropertyName; };
         }
     }
 }
