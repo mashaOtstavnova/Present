@@ -1,5 +1,6 @@
 using Android.Support.V4.App;
 using Java.Lang;
+using MvvmCross.Core.ViewModels;
 using Presents.Droid.Fragments;
 
 namespace Presents.Droid.adapters
@@ -38,5 +39,6 @@ namespace Presents.Droid.adapters
         {
             return new String(Content[p0%Content.Length].ToUpper());
         }
+       
     }
 }

@@ -9,6 +9,7 @@ using MvvmCross.Droid.Support.V4;
 using Presents.Core.Domain;
 using Presents.Core.ViewModels;
 using Presents.Droid.adapters;
+using Presents.Droid.Views;
 
 namespace Presents.Droid.Fragments
 {
@@ -47,7 +48,7 @@ namespace Presents.Droid.Fragments
 
         private void GridOnItemClick(object sender, AdapterView.ItemClickEventArgs itemClickEventArgs)
         {
-            var intent = new Intent(Activity, typeof (PresentsViewModel));
+            var intent = new Intent(Activity, typeof (PresentsView));
             intent.PutExtra("Title", presents[itemClickEventArgs.Position].Title);
             intent.PutExtra("Image", presents[itemClickEventArgs.Position].Image);
             StartActivity(intent);

@@ -47,6 +47,7 @@
     <Compile Include="ViewModels\FriendViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\InfoViewModel.cs" />
+    <Compile Include="ViewModels\NewPresentViewModel.cs" />
     <Compile Include="ViewModels\PresentsAllViewModel.cs" />
     <Compile Include="ViewModels\PresentsBrowseViewModel.cs" />
     <Compile Include="ViewModels\PresentsRecentViewModel.cs" />

@@ -44,5 +44,6 @@ namespace Presents.Droid.Fragments
             tabs.SetupWithViewPager(viewPager);
             return view;
         }
+        
     }
 }

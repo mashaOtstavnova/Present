@@ -9,6 +9,13 @@ namespace Presents.Core.ViewModels
 {
     public class PresentsViewModel : BaseViewModel
     {
-       
+        public IMvxCommand AddClickCommand
+        {
+            get { return new MvxCommand(OnClickAdd); }
+        }
+
+        private void OnClickAdd()
+        {
+        }
     }
 }

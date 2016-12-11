@@ -61,7 +61,7 @@ namespace Presents.Droid.Views
                         ViewModel.ShowFriends();
                         break;
                     case Resource.Id.nav_settings:
-                        ViewModel.ShowInfo();
+                        ViewModel.ShowSettings();
                         break;
                     case Resource.Id.nav_info:
                         ViewModel.ShowInfo();

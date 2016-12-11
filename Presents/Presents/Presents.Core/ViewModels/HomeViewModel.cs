@@ -20,7 +20,7 @@ namespace Presents.Core.ViewModels
         }
         public void ShowSettings()
         {
-            ShowViewModel<SettingsViewModel>();
+            ShowViewModel<NewPresentViewModel>();
         }
 
         public void ShowFriends()

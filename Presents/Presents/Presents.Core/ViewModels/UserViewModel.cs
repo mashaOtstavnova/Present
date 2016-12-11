@@ -13,5 +13,13 @@ namespace Presents.Core.ViewModels
         {
             ShowViewModel<PresentsBrowseViewModel>();
         }
+        public IMvxCommand AddClickCommand
+        {
+            get { return new MvxCommand(OnClickAdd); }
+        }
+
+        private void OnClickAdd()
+        {
+        }
     }
 }

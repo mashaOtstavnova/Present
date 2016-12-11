@@ -15,5 +15,6 @@ namespace Presents.Core.ViewModels
                 RaisePropertyChanged(() => Title);
             }
         }
+       
     }
 }

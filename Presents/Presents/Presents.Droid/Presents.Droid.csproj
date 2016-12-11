@@ -178,6 +178,7 @@
     <Compile Include="Views\HomeView.cs" />
     <Compile Include="Views\InfoView.cs" />
     <Compile Include="Views\MvxSelectableListView.cs" />
+    <Compile Include="Fragments\NewPresentFragment.cs" />
     <Compile Include="Views\PresentsView.cs" />
     <Compile Include="Views\SettingsView.cs" />
     <Compile Include="Views\UserView.cs" />
@@ -250,6 +251,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\page_presents.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\new_present_fragment.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

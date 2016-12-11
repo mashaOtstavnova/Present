@@ -12,6 +12,14 @@ namespace Presents.Core.ViewModels
         public PresentsRecentViewModel()
         {
         }
+        public IMvxCommand AddClickCommand
+        {
+            get { return new MvxCommand(OnClickAdd); }
+        }
+
+        private void OnClickAdd()
+        {
+        }
     }
 }
 

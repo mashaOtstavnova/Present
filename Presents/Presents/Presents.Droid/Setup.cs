@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using Android.Content;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Droid.Platform;
@@ -28,6 +31,13 @@ namespace Presents.Droid
         protected override IMvxTrace CreateDebugTrace()
         {
             return new DebugTrace();
+        }
+
+        protected override IEnumerable<Assembly> GetViewAssemblies()
+        {
+            var assemblies = base.GetViewAssemblies().ToList();
+            assemblies.Add(typeof (Android.Support.Design.Widget.FloatingActionButton).Assembly);
+            return assemblies;
         }
 
         protected override void InitializeFirstChance()

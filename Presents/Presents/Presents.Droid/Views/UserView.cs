@@ -6,6 +6,7 @@ using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
 using Com.Nostra13.Universalimageloader.Core;
+using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using Presents.Core.IServices;
 using Presents.Core.ViewModels;
@@ -65,7 +66,14 @@ namespace Presents.Droid.Views
         {
             ViewModel.ShowPresents.Execute();
         }
+        public IMvxCommand AddClickCommand
+        {
+            get { return new MvxCommand(OnClickAdd); }
+        }
 
+        private void OnClickAdd()
+        {
+        }
         private void OnRequestComplete(VKResponse obj)
         {
             var r = obj.Json;
