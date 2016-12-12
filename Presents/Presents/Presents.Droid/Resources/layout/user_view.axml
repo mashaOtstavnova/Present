@@ -95,7 +95,6 @@
                 android:drawableLeft="@drawable/ic_present"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                android:layout_marginTop="60dp"
                 android:layout_alignParentEnd="true"
                 android:paddingLeft="10dp"
                 android:drawablePadding="-50dp" />

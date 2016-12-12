@@ -2,7 +2,7 @@
 
 namespace Presents.Core.ViewModels
 {
-    public class PresentsBrowseViewModel : MvxViewModel
+    public class PresentsBrowseViewModel : BaseViewModel
     {
         public IMvxCommand AddClickCommand
         {
@@ -11,6 +11,7 @@ namespace Presents.Core.ViewModels
 
         private void OnClickAdd()
         {
+            ShowViewModel<NewPresentViewModel>();
         }
     }
 }

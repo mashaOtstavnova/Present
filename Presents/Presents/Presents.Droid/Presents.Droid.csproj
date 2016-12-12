@@ -118,6 +118,10 @@
       <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Refractored.FloatingActionButton, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Refractored.FloatingActionButton.1.4.0\lib\MonoAndroid10\Refractored.FloatingActionButton.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -189,9 +193,6 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\toolbar.axml" />
-    <AndroidResource Include="Resources\layout\FirstView.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
     <AndroidResource Include="Resources\layout\SplashScreen.axml" />
     <AndroidResource Include="Resources\layout\login_view.axml">
       <SubType>Designer</SubType>
@@ -200,9 +201,6 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\vk_fragment_logout.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\TestView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\button_selector.xml">
@@ -367,6 +365,7 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_settings.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_user.png" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_present.png" />
+    <AndroidResource Include="Resources\drawable\present.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Presents.Core\Presents.Core.csproj">

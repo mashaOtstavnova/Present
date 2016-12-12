@@ -6,54 +6,66 @@
     android:descendantFocusability="beforeDescendants"
     android:focusableInTouchMode="true"
     local:layout_behavior="@string/appbar_scrolling_view_behavior">
-  <LinearLayout
-      android:orientation="vertical"
-      android:layout_width="fill_parent"
-      android:layout_height="fill_parent"
-      android:paddingLeft="8dp"
-      android:paddingRight="8dp">
-    <ImageView
-          android:id="@+id/profile_image"
-          android:layout_width="150dp"
-          android:layout_height="150dp"
-          android:scaleType="centerCrop" />
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-         android:id="@+id/src_image_present"
-        android:layout_height="wrap_content">
-      <EditText
-          android:layout_width="fill_parent"
-          android:layout_height="wrap_content"
-          android:hint="Ссылка"
-          android:text="Ссылка на изображение" />
-    </android.support.design.widget.TextInputLayout>
-    
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:id="@+id/name_present"
-        android:layout_height="wrap_content">
-      <EditText
-          android:layout_width="fill_parent"
-          android:layout_height="wrap_content"
-          android:hint="Наименование"
-          android:text="Наименование" />
-    </android.support.design.widget.TextInputLayout>
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-         android:id="@+id/description_present">
-      <EditText
-          android:layout_width="fill_parent"
-          android:layout_height="wrap_content"
-          android:hint="Описание" 
-          android:text="Описание"/>
-    </android.support.design.widget.TextInputLayout>
-   
-   
-    <android.support.v7.widget.SwitchCompat
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Switch" />
-  
-  </LinearLayout>
+        android:layout_height="fill_parent"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp">
+        <ImageView
+            android:id="@+id/profile_image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop" />
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:id="@+id/src_image_present"
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ссылка"
+                android:text="Ссылка на изображение" />
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:id="@+id/name_present"
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="Наименование"
+                android:text="Наименование" />
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/description_present">
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="Описание"
+                android:text="Описание" />
+        </android.support.design.widget.TextInputLayout>
+        <android.support.v7.widget.SwitchCompat
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Switch" />
+      <Button
+               android:background="@color/indigo_500"
+               android:id="@+id/button_add_present"
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:text="Добавить подарок"
+               android:gravity="center"
+               android:textColor="#fff"
+               android:textSize="18sp"
+               android:drawableLeft="@drawable/ic_present"
+               android:layout_marginLeft="16dp"
+               android:layout_marginRight="16dp"
+               android:layout_marginTop="60dp"
+               android:layout_alignParentEnd="true"
+               android:paddingLeft="10dp"
+               android:drawablePadding="-50dp" />
+    </LinearLayout>
 </ScrollView>

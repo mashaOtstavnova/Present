@@ -1,16 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Presents.Core.ViewModels
+﻿namespace Presents.Core.ViewModels
 {
-    public class NewPresentViewModel:BaseViewModel
+    public class NewPresentViewModel : BaseViewModel
     {
-        public NewPresentViewModel()
-        {
-            
-        }
     }
 }

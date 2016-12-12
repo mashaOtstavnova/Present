@@ -24,6 +24,7 @@ namespace Presents.Droid.Views
         protected override async void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
+            SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.ic_menu);
             // ViewModel.Hello = "test";
             ViewModel.Title = "Presents";
             Title = ViewModel.Title;
@@ -46,7 +47,6 @@ namespace Presents.Droid.Views
 
             drawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
 
-            SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.ic_menu);
             navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.NavigationItemSelected += (sender, e) =>
             {

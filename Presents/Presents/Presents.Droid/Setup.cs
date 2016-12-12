@@ -33,10 +33,15 @@ namespace Presents.Droid
             return new DebugTrace();
         }
 
+        protected override IEnumerable<Assembly> AndroidViewAssemblies {
+            get { return GetViewAssemblies(); }
+        }
+
         protected override IEnumerable<Assembly> GetViewAssemblies()
         {
             var assemblies = base.GetViewAssemblies().ToList();
-            assemblies.Add(typeof (Android.Support.Design.Widget.FloatingActionButton).Assembly);
+            //assemblies.Add(typeof (Android.Support.Design.Widget.FloatingActionButton).Assembly);
+            assemblies.Add(typeof(com.refractored.fab.FloatingActionButton).Assembly);
             return assemblies;
         }
 
