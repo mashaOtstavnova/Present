@@ -13,7 +13,7 @@
         android:paddingLeft="8dp"
         android:paddingRight="8dp">
         <ImageView
-            android:id="@+id/profile_image"
+            android:id="@+id/present_image"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:scaleType="centerCrop" />
@@ -51,21 +51,21 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Switch" />
-      <Button
-               android:background="@color/indigo_500"
-               android:id="@+id/button_add_present"
-               android:layout_width="fill_parent"
-               android:layout_height="wrap_content"
-               android:text="Добавить подарок"
-               android:gravity="center"
-               android:textColor="#fff"
-               android:textSize="18sp"
-               android:drawableLeft="@drawable/ic_present"
-               android:layout_marginLeft="16dp"
-               android:layout_marginRight="16dp"
-               android:layout_marginTop="60dp"
-               android:layout_alignParentEnd="true"
-               android:paddingLeft="10dp"
-               android:drawablePadding="-50dp" />
+        <Button
+            android:background="@color/indigo_500"
+            android:id="@+id/button_add_present"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Добавить подарок"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:drawableLeft="@drawable/ic_present"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="60dp"
+            android:layout_alignParentEnd="true"
+            android:paddingLeft="10dp"
+            android:drawablePadding="-50dp" />
     </LinearLayout>
 </ScrollView>

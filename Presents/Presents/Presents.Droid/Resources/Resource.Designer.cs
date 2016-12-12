@@ -2627,7 +2627,7 @@ namespace Presents.Droid
 			public const int postSettingsLayout = 2131099824;
 			
 			// aapt resource value: 0x7f060087
-			public const int profile_image = 2131099783;
+			public const int present_image = 2131099783;
 			
 			// aapt resource value: 0x7f0600a3
 			public const int progress = 2131099811;

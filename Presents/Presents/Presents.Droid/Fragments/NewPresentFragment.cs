@@ -1,10 +1,10 @@
 using System;
+using System.IO;
 using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
-using Android.Support.Design.Widget;
-using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
 using Com.Nostra13.Universalimageloader.Core;
@@ -14,10 +14,12 @@ using Presents.Core.ViewModels;
 
 namespace Presents.Droid.Fragments
 {
-    [MvxFragment(typeof (HomeViewModel), Resource.Id.content_frame)]
+    [MvxFragment(typeof(HomeViewModel), Resource.Id.content_frame)]
     [Register("presents.droid.fragments.NewPresentFragment")]
     public class NewPresentFragment : MvxFragment<NewPresentViewModel>
     {
+        public static readonly int PickImageId = 1000;
+        private ImageView _presentImageView;
         private ImageLoader imageLoader;
         private View view;
 
@@ -26,45 +28,50 @@ namespace Presents.Droid.Fragments
             RetainInstance = true;
         }
 
+        public Intent Intent { get; set; }
+
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            var ignored = base.OnCreateView(inflater, container, savedInstanceState);
+            base.OnCreateView(inflater, container, savedInstanceState);
             view = inflater.Inflate(Resource.Layout.new_present_fragment, null);
-            var image = view.FindViewById<TextInputLayout>(Resource.Id.src_image_present);
+            _presentImageView = view.FindViewById<ImageView>(Resource.Id.present_image);
             imageLoader = ImageLoader.Instance;
             var imageUri = "drawable://" + Resource.Drawable.present;
-            imageLoader.DisplayImage(imageUri, view.FindViewById<ImageView>(Resource.Id.profile_image));
+            imageLoader.DisplayImage(imageUri, _presentImageView);
 
-            view.FindViewById<ImageView>(Resource.Id.profile_image).Click += (sender, args) =>
+            _presentImageView.Click += (sender, args) =>
             {
-                var builder = new NotificationCompat.Builder(Activity)
-                    .SetSmallIcon(Resource.Drawable.ic_launcher)
-                    .SetContentTitle("Click to go to friend details!")
-                    .SetContentText("New Friend!!");
-
-                //var friendActivity = new Intent(Activity, typeof(FriendActivity));
-
-                //PendingIntent pendingIntent = PendingIntent.GetActivity(Activity, 0, friendActivity, 0);
-
-
-                // builder.SetContentIntent(pendingIntent);
-                builder.SetAutoCancel(true);
-                var notificationManager =
-                    (NotificationManager) Activity.GetSystemService(Context.NotificationService);
-                notificationManager.Notify(0, builder.Build());
+                Intent = new Intent();
+                Intent.SetType("image/*");
+                Intent.SetAction(Intent.ActionGetContent);
+                StartActivityForResult(Intent.CreateChooser(Intent, "Выберите изображение"), PickImageId);
             };
+
             var addButton = view.FindViewById<Button>(Resource.Id.button_add_present);
             addButton.Click += ButtonForAddPresent;
             return view;
         }
 
+        public override void OnActivityResult(int requestCode, int resultCode, Intent data)
+        {
+            if (requestCode == PickImageId && resultCode == (int) Result.Ok && data != null)
+            {
+                var uri = data.Data;
+                _presentImageView.SetImageURI(uri);
+            }
+            base.OnActivityResult(requestCode, resultCode, data);
+        }
+
+
         private void ButtonForAddPresent(object sender, EventArgs e)
         {
-            var image = view.FindViewById<TextInputLayout>(Resource.Id.src_image_present).EditText;
-            var name = view.FindViewById<TextInputLayout>(Resource.Id.name_present).EditText;
-            ;
-            var description = view.FindViewById<TextInputLayout>(Resource.Id.description_present).EditText;
-            ;
+            _presentImageView.DrawingCacheEnabled = true;
+            _presentImageView.BuildDrawingCache();
+            var bitmap = _presentImageView.DrawingCache;
+
+            var ms = new MemoryStream();
+            bitmap.Compress(Bitmap.CompressFormat.Png, 0, ms);
+            ViewModel.PresentImage = ms.ToArray();
         }
     }
 }
